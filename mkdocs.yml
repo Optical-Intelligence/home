@@ -1,0 +1,14 @@
+site_name: Optical Intellegence
+
+theme:
+  name: material
+  features:
+    - navigation.tabs      # Moves main categories to a clean top bar
+    - navigation.sections  # Groups sidebar items cleanly
+
+plugins:
+  - blog:
+      post_dir: blog/posts  # Where your actual draft and published posts will live
+      archive: true         # Automatically groups old posts by year/month
+      categories: true      # Enables category pages
+
