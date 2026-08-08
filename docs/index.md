@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Optical Intelligence
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## About This Website
 
-## Commands
+**Optical Intelligence** explores whether ambitious technology ideas can work in the real world.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+I use physics-based models, engineering analysis, and Python simulations to examine the feasibility and performance of emerging technologies. For example, I may analyze whether concepts such as [Reflect Orbital](https://www.reflectorbital.com/)'s proposal to use mirrors in space to reflect sunlight onto Earth are physically and technically feasible.
 
-## Project layout
+The goal is simple: **Start with the physics. Build the model. Run the numbers.**
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+>**The site also provides Python code, simulations, and technical tools for exploring these problems.**
+
+## About Me
+
+I have more than 20 years of R&D experience in optics and physics, working in both academia and industry. I have worked as a professor as well as an engineer solving practical technology and engineering problems.
+
+My goal with Optical Intelligence is to combine this experience with computational modeling to provide quantitative, physics-based analysis of emerging technologies.

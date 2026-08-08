@@ -6,7 +6,13 @@ theme:
     - navigation.tabs      # Moves main categories to a clean top bar
     - navigation.sections  # Groups sidebar items cleanly
 
+nav:
+  - About: index.md
+  - Blog: blog/index.md
+  - Contact: contact.md
+
 plugins:
+  - search
   - blog:
       post_dir: blog/posts  # Where your actual draft and published posts will live
       archive: true         # Automatically groups old posts by year/month
