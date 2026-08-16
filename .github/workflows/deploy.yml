@@ -1,0 +1,56 @@
+name: Deploy MkDocs site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 1. Get your repository files
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      # 3. Install MkDocs Material
+      - name: Install MkDocs Material
+        run: |
+          pip install mkdocs-material
+
+      # 4. Configure GitHub Pages
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # 5. Build the MkDocs website
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      # 6. Upload the generated website
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./site
+
+      # 7. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
