@@ -5,10 +5,12 @@ theme:
   features:
     - navigation.tabs      # Moves main categories to a clean top bar
     - navigation.sections  # Groups sidebar items cleanly
+    - navigation.indexes
 
 nav:
   - About: index.md
-  - Blog: blog/index.md
+  - Articles: 
+    - blog/index.md
   - Contact: contact.md
 
 plugins:
