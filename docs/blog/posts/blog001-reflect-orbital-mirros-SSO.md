@@ -6,6 +6,10 @@ draft: false
 
 # How Many Space Mirrors Would It Take to Light Up Your Night?
 
+![Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance](blog001-reflect-orbital-mirros-SSO_images/figure1.PNG)
+
+*Figure 1. Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance at Boston.*
+
 ## Introduction
 
 I recently came across a startup company, [Reflect Orbital](https://www.reflectorbital.com/), that wants to put large mirrors into space and use them to reflect sunlight back toward Earth after sunset. The basic idea is to use orbital mirrors to extend sunlight into the night and provide illumination to selected locations on Earth. If you are interested in their vision and planned applications, you can find more details on their website.
@@ -38,19 +42,9 @@ A Sun-synchronous orbit is designed to maintain a nearly constant orientation wi
 
 In this simulation, I therefore use **dawn-dusk Sun-synchronous orbits** as the candidate orbits for the orbital mirrors. The next sections will explain in detail how the orbital geometry is determined and how I calculate whether a particular mirror can actually reflect sunlight to a specific point on Earth.
 
-### Figure 1 — Mirror orbital altitude 1450 km
-
-![Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance](blog001-reflect-orbital-mirros-SSO_images/figure1.PNG)
-
-*Figure 1. Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance at Boston.*
-
-### Figure 2 — Mirror orbital altitude 2100 km
-
 ![Sun–Mirror–Earth configuration producing 1× full-Moon irradiance](blog001-reflect-orbital-mirros-SSO_images/figure2.PNG)
 
 *Figure 2. Sun–Mirror–Earth configuration producing 1× full-Moon irradiance at Boston.*
-
-### Figure 3 — Mirror orbital altitude 4000 km
 
 ![Sun–Mirror–Earth configuration producing 11× full-Moon irradiance](blog001-reflect-orbital-mirros-SSO_images/figure3.PNG)
 
@@ -62,7 +56,7 @@ The final irradiance produced by the reflected sunlight at Boston depends strong
 
 For this particular example, **Mirrors on the SSO orbits below approximately 1,400 km cannot illuminate Boston** because the mirrors are outside Boston's line of sight to the orbit. As the orbital altitude increases, the SSO orbital inclination also changes. This changes the three-dimensional reflection geometry and, in particular, the angle at which the reflected light reaches Boston. The orbital altitude also determines the circumference of the orbit and therefore the total number of mirrors that can be accommodated when a fixed spacing is used.
 
-For example, at an SSO altitude of **2,100 km**, the orbit can accommodate approximately **1,064 mirrors** when the mirrors are spaced **100 km apart**. However, only **169 mirrors**, or approximately **16% of the total constellation**, have the appropriate geometry to reflect sunlight toward Boston at the selected time.
+For example, at an SSO altitude of **2,100 km** (Figure 2), the orbit can accommodate approximately **1,064 mirrors** when the mirrors are spaced **100 km apart**. However, only **169 mirrors**, or approximately **16% of the total constellation**, have the appropriate geometry to reflect sunlight toward Boston at the selected time.
 
 Interestingly, these 169 functional mirrors are sufficient to produce a total irradiance at Boston approximately **equivalent to full-Moon illumination** under the assumptions used in this simulation.
 
