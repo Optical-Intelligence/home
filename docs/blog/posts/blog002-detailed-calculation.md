@@ -1280,60 +1280,32 @@ The atmosphere is represented using a single transmission factor.
 A realistic calculation would account for:
 
 - wavelength;
-- air mass;
 - aerosols;
 - water vapor;
-- ozone;
 - elevation angle;
 - weather conditions.
 
-### 20.3 Clouds
-
-Clouds are not included.
-
-In reality, clouds could significantly reduce or completely block the reflected illumination at a particular location.
-
-### 20.4 Ideal Mirror
+### 20.3 Ideal Mirror
 
 The mirror is assumed to behave as an ideal specular reflector.
 
 Real mirrors have:
-
-- finite surface accuracy;
 - scattering;
 - deformation;
 - pointing errors;
 - wavelength-dependent reflectivity.
 
-### 20.5 Finite Solar Disk
-
-The finite angular diameter of the Sun is included using approximately
-
-$$
-9.3\ \mathrm{mrad}.
-$$
-
-A more detailed optical model would treat the Sun as an extended source and calculate the resulting illumination distribution across the ground.
-
-### 20.6 Diffraction
-
-Diffraction is not explicitly modeled.
-
-For a large mirror, diffraction can be analyzed separately. However, the finite angular size of the Sun is already an important limitation on how tightly sunlight can be concentrated using a flat mirror.
-
-### 20.7 Orbital Perturbations
+### 20.4 Orbital Perturbations
 
 The orbit model is based on a simplified circular SSO.
 
 A real constellation would experience additional perturbations, including:
 
-- higher-order Earth's gravity field;
 - atmospheric drag;
 - solar radiation pressure;
 - third-body gravitational effects;
-- station-keeping errors.
 
-### 20.8 Pointing Accuracy
+### 20.5 Pointing Accuracy
 
 The simulation assumes that the mirror can be oriented exactly toward the desired target.
 
@@ -1341,7 +1313,7 @@ A real spacecraft would have finite attitude-control accuracy.
 
 Even a small pointing error could move the illuminated spot by many kilometers.
 
-### 20.9 Seasonal Effects
+### 20.6 Seasonal Effects
 
 The simulation represents a particular Sun-Earth geometry at a selected time.
 
