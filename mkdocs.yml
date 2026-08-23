@@ -3,20 +3,26 @@ site_name: Optical Intellegence
 theme:
   name: material
   features:
-    - navigation.tabs      # Moves main categories to a clean top bar
-    - navigation.sections  # Groups sidebar items cleanly
+    - navigation.tabs
+    - navigation.sections
     - navigation.indexes
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - About: index.md
-  - Articles: 
+  - Articles:
     - blog/index.md
   - Contact: contact.md
 
 plugins:
   - search
   - blog:
-      post_dir: blog/posts  # Where your actual draft and published posts will live
-      archive: true         # Automatically groups old posts by year/month
-      categories: true      # Enables category pages
-
+      post_dir: blog/posts
+      archive: true
+      categories: true
