@@ -52,7 +52,10 @@ The first article showed that I selected a **dawn-dusk Sun-synchronous orbit** a
 
 But why is this orbit attractive?
 
-### 4.1 What Is a Sun-Synchronous Orbit?
+### 3.1 What Is a Sun-Synchronous Orbit?
+
+![Dawn-dusk Sun-synchronous orbit](images/blog002_figure1.PNG) 
+*Figure 1 — Dawn-dusk Sun-synchronous orbit ([image credit](https://www.esa.int/ESA_Multimedia/Images/2018/07/The_SMOS_satellite_in_sun-synchronous_orbit))*
 
 A Sun-synchronous orbit is an orbit whose orbital plane precesses around Earth at approximately the same rate that Earth moves around the Sun. The orbital plane therefore maintains approximately the same orientation relative to the Sun.
 
@@ -142,7 +145,7 @@ $$
 
 This is why the required SSO inclination changes with orbital altitude.
 
-### 4.2 What Is LTAN?
+### 3.2 What Is LTAN?
 
 LTAN stands for **Local Time of the Ascending Node**.
 
@@ -164,19 +167,14 @@ $$
 
 with the descending node occurring approximately at 18:00 local time.
 
-### 4.3 Why Dawn-Dusk?
+### 3.3 Why Dawn-Dusk?
 
 For a our space mirror whose purpose is to collect sunlight, Earth's shadow is undesirable. A dawn-dusk Sun-synchronous orbit is designed to provide near-continuous sunlight exposure by keeping the orbital plane close to the day-night terminator. However, it is important not to interpret "dawn-dusk" as a guarantee that every satellite will always receive sunlight under every possible condition. The exact eclipse geometry depends on altitude, season, orbital orientation, and the relative positions of the Sun and Earth.
 
 This makes the orbit attractive for our sunlight-reflection system. The important point is that a dawn-dusk SSO is a natural candidate when continuous access to sunlight is an important design objective.
 
-> **Figure 3 — Dawn-dusk Sun-synchronous orbit geometry**
->
-> `[INSERT FIGURE HERE]`
-
 ---
-
-## 5. Distributing the Mirrors Around the Orbit
+## 4. Distributing the Mirrors Around the Orbit
 
 Once the orbit altitude and inclination are determined, the mirrors can be distributed around the circular orbit.
 
@@ -243,7 +241,7 @@ That distinction is extremely important.
 
 ---
 
-## 6. Mirror Positions
+## 5. Mirror Positions
 
 For a circular orbit, each mirror can be represented by its position around the orbital plane.
 
@@ -289,17 +287,11 @@ $$
 
 This creates an evenly spaced constellation around the orbit.
 
-> **Figure 4 — Even distribution of mirrors around the SSO**
->
-> `[INSERT FIGURE HERE]`
-
 ---
 
-## 7. Earth Visibility and Line of Sight
+## 6. Earth Visibility and Line of Sight
 
-Knowing the position of a mirror is not enough.
-
-The mirror must satisfy two visibility conditions:
+Knowing the position of a mirror is not enough. The mirror must satisfy two visibility conditions:
 
 1. The mirror must be able to see the Sun.
 2. The mirror must be able to see the target location on Earth.
@@ -324,7 +316,7 @@ $$
 
 ---
 
-### 7.1 Sun-to-Mirror Visibility
+### 6.1 Sun-to-Mirror Visibility
 
 Consider the line segment connecting the Sun and the mirror.
 
@@ -352,7 +344,7 @@ If this line intersects Earth, the mirror is inside Earth's shadow and cannot re
 
 ---
 
-### 7.2 Mirror-to-Earth Visibility
+### 6.2 Mirror-to-Earth Visibility
 
 The same geometric test is performed between the mirror and the target.
 
@@ -390,7 +382,7 @@ If this line segment intersects Earth before reaching the target, the reflected 
 
 ---
 
-## 8. Line-Segment / Earth Intersection
+## 7. Line-Segment / Earth Intersection
 
 For a spherical Earth, the Earth surface is described by
 
@@ -480,46 +472,26 @@ $$
 
 This provides a direct geometric test for Earth occlusion.
 
-### 8.1 Why Not Use Only a Horizon Angle?
-
-A simple horizon-angle calculation can determine whether a satellite is above the horizon.
-
-However, the vector intersection method directly tests the actual three-dimensional path between two points.
-
-This is particularly useful here because we are interested in the complete path:
-
-$$
-\boxed{
-\text{Sun}
-\rightarrow
-\text{Mirror}
-\rightarrow
-\text{Target}
-}
-$$
-
-rather than simply asking whether the satellite is above the target's horizon.
-
-> **Figure 5 — Earth line-of-sight geometry**
->
-> `[INSERT FIGURE HERE]`
-
 ---
 
-# 9. Sun-to-Mirror-to-Earth Reflection Geometry
+# 8. Sun-to-Mirror-to-Earth Reflection Geometry
+
+![Sun-to-Mirror-to-Earth Reflection Geometry](images/blog002_figure2.PNG)
+
+*Figure 2. Sun-to-Mirror-to-Earth Reflection Geometry.*
 
 Now we reach the central optical calculation.
 
 Suppose the mirror is located at
 
 $$
-\mathbf{r}_m
+\mathbf{r}_{\mathrm{mirror}}
 $$
 
 and the target on Earth is located at
 
 $$
-\mathbf{r}_T.
+\mathbf{r}_{\mathrm{target}}
 $$
 
 The vector from the mirror toward the Sun is
@@ -530,7 +502,7 @@ $$
 =
 \mathbf{r}_{Sun}
 -
-\mathbf{r}_m
+\mathbf{r}_{\mathrm{mirror}}
 }
 $$
 
@@ -551,9 +523,9 @@ $$
 \boxed{
 \mathbf{r}
 =
-\mathbf{r}_T
+\mathbf{r}_{\mathrm{target}}
 -
-\mathbf{r}_m
+\mathbf{r}_{\mathrm{mirror}}
 }
 $$
 
@@ -575,7 +547,7 @@ We now know the two directions required for the reflection:
 
 ---
 
-## 9.1 Required Mirror Normal
+## 8.1 Required Mirror Normal
 
 For an ideal flat mirror undergoing specular reflection, the surface normal bisects the angle between the incoming and outgoing directions.
 
@@ -624,45 +596,9 @@ $$
 
 The mirror therefore redirects the sunlight from the Sun toward the selected point on Earth.
 
-> **Figure 6 — Sun → Mirror → Earth reflection geometry**
->
-> `[INSERT FIGURE HERE]`
-
 ---
 
-## 9.2 Reflection Vector
-
-The reflected direction can also be calculated directly using the standard reflection equation:
-
-$$
-\boxed{
-\hat{\mathbf{r}}_{\mathrm{ref}}
-=
-2
-\left(
-\hat{\mathbf{s}}
-\cdot
-\hat{\mathbf{n}}
-\right)
-\hat{\mathbf{n}}
--
-\hat{\mathbf{s}}.
-}
-$$
-
-For a correctly oriented ideal mirror,
-
-$$
-\hat{\mathbf{r}}_{\mathrm{ref}}
-\approx
-\hat{\mathbf{r}}.
-$$
-
-This provides a useful consistency check for the reflection geometry.
-
----
-
-# 10. Mirror Area and Projected Area
+# 9. Mirror Area and Projected Area
 
 Suppose each mirror is a square with side length $L$.
 
@@ -712,6 +648,8 @@ A_m
 }
 $$
 
+where $E_{\odot} = 1361 W/m^2$ is the average solar irradiance hitting the top of Earth's atmosphere. 
+
 When the mirror faces the Sun directly,
 
 $$
@@ -734,7 +672,7 @@ and the effective collecting area decreases.
 
 ---
 
-# 11. Reflected Optical Power
+# 10. Reflected Optical Power
 
 Let the mirror reflectivity be $\rho$.
 
@@ -766,13 +704,9 @@ These effects can be incorporated later using more sophisticated models.
 
 ---
 
-# 12. The Finite Angular Size of the Sun
+# 11. The Finite Angular Size of the Sun
 
-If the Sun were a perfect point source, an ideal flat mirror could theoretically produce an extremely small reflected beam.
-
-But the Sun is not a point source.
-
-Its angular diameter is approximately
+The sun light coming to Earth is not perfeclty parrellel and has an angular divergence of approximately
 
 $$
 \boxed{
@@ -792,13 +726,7 @@ $$
 }
 $$
 
-This means that even a perfect flat mirror cannot produce an infinitely narrow reflected beam.
-
-The reflected sunlight therefore forms a finite illuminated region on Earth.
-
----
-
-# 13. Reflected Beam Size
+This means the reflected sunlight from the flat mirror forms a finite illuminated region on Earth.
 
 Let
 
@@ -875,11 +803,11 @@ This is one of the reasons that increasing orbital altitude does not necessarily
 
 ---
 
-# 14. Ground Incidence Angle
+# 12. Ground Incidence Angle
 
 The reflected light does not necessarily hit Earth's surface perpendicular to the ground.
 
-At the target location, the outward surface normal can be represented by
+At the target location, the outward surface normal can be represented by (Figure 2)
 
 $$
 \hat{\mathbf{n}}_g.
@@ -929,7 +857,11 @@ Therefore, the same amount of reflected optical power can produce different grou
 
 ---
 
-# 15. Visible-Light Component
+# 13. Visible-Light Component
+
+![Solar_spectrum](images/blog002_figure3.PNG)
+
+*Figure 3. Solar spectrum.*
 
 The sunlight arriving at the mirror contains a broad range of wavelengths.
 
@@ -962,7 +894,7 @@ A more rigorous model would integrate the solar spectral irradiance over a defin
 
 ---
 
-# 16. Atmospheric Attenuation
+# 14. Atmospheric Attenuation
 
 The reflected irradiance calculated above represents the illumination before accounting for atmospheric losses.
 
@@ -992,21 +924,16 @@ This is intentionally a simplified approximation.
 Actual atmospheric transmission depends on:
 
 - wavelength;
-- air mass;
-- atmospheric pressure;
 - aerosols;
 - water vapor;
-- ozone;
 - solar elevation;
 - weather conditions.
-
-Clouds can produce a much larger reduction.
 
 Therefore, the atmospheric factor used here should be regarded as a representative clear-sky approximation rather than a universal value.
 
 ---
 
-# 17. Final Ground-Irradiance Equation
+# 15. Final Ground-Irradiance Equation
 
 We can now combine the optical and geometric calculations.
 
@@ -1120,7 +1047,7 @@ This is the main irradiance equation used in the simplified model.
 
 ---
 
-# 18. What Each Term Means
+# 16. What Each Term Means
 
 The equation looks complicated, but every term has a straightforward physical meaning:
 
@@ -1187,7 +1114,7 @@ This means that increasing the distance between the mirror and the target can si
 
 ---
 
-# 19. Why Orbital Altitude Matters
+# 17. Why Orbital Altitude Matters
 
 Orbital altitude affects several parts of the calculation simultaneously.
 
@@ -1213,7 +1140,7 @@ It requires evaluating the complete optical and geometric model.
 
 ---
 
-# 20. Why Only Some Mirrors Contribute
+# 18. Why Only Some Mirrors Contribute
 
 This is one of the most important results of the simulation.
 
@@ -1286,7 +1213,7 @@ This is why simply calculating the irradiance from one mirror and multiplying it
 
 ---
 
-# 21. Comparing the Result with Full-Moon Illumination
+# 19. Comparing the Result with Full-Moon Illumination
 
 Once the total reflected irradiance has been calculated, it can be compared with a reference full-Moon irradiance.
 
@@ -1334,19 +1261,19 @@ we can say:
 
 ---
 
-# 22. Limitations of the Model
+# 20. Limitations of the Model
 
 The model described above is intentionally simplified.
 
 It is designed to understand the dominant physical relationships rather than reproduce every detail of a real spacecraft system.
 
-### 22.1 Spherical Earth
+### 20.1 Spherical Earth
 
 The line-of-sight calculation uses a spherical Earth approximation.
 
 A more accurate model would use the WGS84 ellipsoid and potentially include terrain elevation.
 
-### 22.2 Simplified Atmosphere
+### 20.2 Simplified Atmosphere
 
 The atmosphere is represented using a single transmission factor.
 
@@ -1360,13 +1287,13 @@ A realistic calculation would account for:
 - elevation angle;
 - weather conditions.
 
-### 22.3 Clouds
+### 20.3 Clouds
 
 Clouds are not included.
 
 In reality, clouds could significantly reduce or completely block the reflected illumination at a particular location.
 
-### 22.4 Ideal Mirror
+### 20.4 Ideal Mirror
 
 The mirror is assumed to behave as an ideal specular reflector.
 
@@ -1378,7 +1305,7 @@ Real mirrors have:
 - pointing errors;
 - wavelength-dependent reflectivity.
 
-### 22.5 Finite Solar Disk
+### 20.5 Finite Solar Disk
 
 The finite angular diameter of the Sun is included using approximately
 
@@ -1388,13 +1315,13 @@ $$
 
 A more detailed optical model would treat the Sun as an extended source and calculate the resulting illumination distribution across the ground.
 
-### 22.6 Diffraction
+### 20.6 Diffraction
 
 Diffraction is not explicitly modeled.
 
 For a large mirror, diffraction can be analyzed separately. However, the finite angular size of the Sun is already an important limitation on how tightly sunlight can be concentrated using a flat mirror.
 
-### 22.7 Orbital Perturbations
+### 20.7 Orbital Perturbations
 
 The orbit model is based on a simplified circular SSO.
 
@@ -1406,7 +1333,7 @@ A real constellation would experience additional perturbations, including:
 - third-body gravitational effects;
 - station-keeping errors.
 
-### 22.8 Pointing Accuracy
+### 20.8 Pointing Accuracy
 
 The simulation assumes that the mirror can be oriented exactly toward the desired target.
 
@@ -1414,7 +1341,7 @@ A real spacecraft would have finite attitude-control accuracy.
 
 Even a small pointing error could move the illuminated spot by many kilometers.
 
-### 22.9 Seasonal Effects
+### 20.9 Seasonal Effects
 
 The simulation represents a particular Sun-Earth geometry at a selected time.
 
@@ -1424,7 +1351,7 @@ A complete analysis should therefore examine different seasons rather than relyi
 
 ---
 
-# 23. What the Simulation Really Tells Us
+# 21. What the Simulation Really Tells Us
 
 The most important lesson from this calculation is that the problem is much more complicated than
 
@@ -1468,7 +1395,7 @@ This is also why changing the orbital altitude can produce surprisingly large ch
 
 ---
 
-# 24. Conclusion
+# 22. Conclusion
 
 The goal of this simulation was not simply to calculate how much sunlight an 18-meter mirror can reflect.
 
