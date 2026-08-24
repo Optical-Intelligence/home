@@ -15,11 +15,11 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - About: index.md
   - Articles:
     - blog/index.md
+  - About: index.md
   - Contact: contact.md
-
+  
 plugins:
   - search
   - blog:

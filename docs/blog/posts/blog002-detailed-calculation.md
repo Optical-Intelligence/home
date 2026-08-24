@@ -8,7 +8,7 @@ draft: True
 
 ## 1. Introduction
 
-In my [previous article](LINK_TO_FIRST_ARTICLE), I used a Python simulation to investigate a simple but interesting question:
+In my [previous article](https://optical-intelligence.github.io/home/blog/2026/08/16/how-many-space-mirrors-would-it-take-to-light-up-your-night), I used a Python simulation to investigate a simple but interesting question:
 
 > **How many orbital mirrors are needed to illuminate Boston with an irradiance approximately equivalent to the Full Moon?**
 
@@ -48,7 +48,7 @@ An Earth-Centered Inertial coordinate system places the origin at the center of 
 
 ## 3. Dawn-Dusk Sun-Synchronous Orbit
 
-The first article showed that I selected a **dawn-dusk Sun-synchronous orbit** as the candidate orbit for the mirrors.
+The [first article](https://optical-intelligence.github.io/home/blog/2026/08/16/how-many-space-mirrors-would-it-take-to-light-up-your-night) showed that I selected a **dawn-dusk Sun-synchronous orbit** as the candidate orbit for the mirrors.
 
 But why is this orbit attractive?
 
@@ -169,7 +169,7 @@ with the descending node occurring approximately at 18:00 local time.
 
 ### 3.3 Why Dawn-Dusk?
 
-For a our space mirror whose purpose is to collect sunlight, Earth's shadow is undesirable. A dawn-dusk Sun-synchronous orbit is designed to provide near-continuous sunlight exposure by keeping the orbital plane close to the day-night terminator. However, it is important not to interpret "dawn-dusk" as a guarantee that every satellite will always receive sunlight under every possible condition. The exact eclipse geometry depends on altitude, season, orbital orientation, and the relative positions of the Sun and Earth.
+For our space mirror whose purpose is to collect sunlight, Earth's shadow is undesirable. A dawn-dusk Sun-synchronous orbit is designed to provide near-continuous sunlight exposure by keeping the orbital plane close to the day-night terminator. However, it is important not to interpret "dawn-dusk" as a guarantee that every satellite will always receive sunlight under every possible condition. The exact eclipse geometry depends on altitude, season, orbital orientation, and the relative positions of the Sun and Earth.
 
 This makes the orbit attractive for our sunlight-reflection system. The important point is that a dawn-dusk SSO is a natural candidate when continuous access to sunlight is an important design objective.
 
@@ -1290,6 +1290,7 @@ A realistic calculation would account for:
 The mirror is assumed to behave as an ideal specular reflector.
 
 Real mirrors have:
+
 - scattering;
 - deformation;
 - pointing errors;
