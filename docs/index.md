@@ -6,6 +6,10 @@ I use physics-based models, engineering analysis, and Python simulations to eval
 
 The goal is simple: **Start with the physics. Build the model. Run the numbers.**
 
+## Contact
+
+* **Email:** [czhaoopticalpython@gmail.com](mailto:czhaoopticalpython@gmail.com) 
+
 ## About Me
 
 >I have more than 20 years of R&D experience in optics and physics, working in both academia and industry. I have worked as a professor as well as an engineer solving practical technology and engineering problems.

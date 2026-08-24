@@ -18,7 +18,6 @@ nav:
   - Articles:
     - blog/index.md
   - About: index.md
-  - Contact: contact.md
   
 plugins:
   - search
