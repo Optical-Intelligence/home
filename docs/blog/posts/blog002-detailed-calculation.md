@@ -18,7 +18,7 @@ But how did I actually calculate those numbers? This article goes one level deep
 
 Here I will explain the physics and mathematics behind the simulation, starting with the orbital geometry and ending with the estimated irradiance on the ground.
 
-The complete Python simulation used to generate the results is available on my **[Gumroad page](YOUR_GUMROAD_LINK)**. I have decided to keep the code separate from this article so that you can experiment with the simulation yourself.
+The complete Python simulation used to generate the results is available on my **[Gumroad page](https://opticalpython.gumroad.com/l/mirror_sso)**. I have decided to keep the code separate from this article so that you can experiment with the simulation yourself.
 
 The calculation can be divided into several major steps:
 
@@ -46,6 +46,8 @@ For this simulation, we used Earth-Centered Inertial Coordinates and the locatio
 
 An Earth-Centered Inertial coordinate system places the origin at the center of Earth while keeping the coordinate axes approximately fixed relative to distant stars. The important point is that this coordinate system does **not rotate with Earth**.
 
+---
+
 ## 3. Dawn-Dusk Sun-Synchronous Orbit
 
 The [first article](https://optical-intelligence.github.io/home/blog/2026/08/16/how-many-space-mirrors-would-it-take-to-light-up-your-night) showed that I selected a **dawn-dusk Sun-synchronous orbit** as the candidate orbit for the mirrors.
@@ -54,7 +56,7 @@ But why is this orbit attractive?
 
 ### 3.1 What Is a Sun-Synchronous Orbit?
 
-![Dawn-dusk Sun-synchronous orbit](images/blog002_figure1.PNG) 
+![Dawn-dusk Sun-synchronous orbit](images/blog002_figure1.PNG)
 *Figure 1 — Dawn-dusk Sun-synchronous orbit ([image credit](https://www.esa.int/ESA_Multimedia/Images/2018/07/The_SMOS_satellite_in_sun-synchronous_orbit))*
 
 A Sun-synchronous orbit is an orbit whose orbital plane precesses around Earth at approximately the same rate that Earth moves around the Sun. The orbital plane therefore maintains approximately the same orientation relative to the Sun.
@@ -1405,6 +1407,6 @@ Even if an orbit contains more than one thousand mirrors, only a fraction may ha
 
 That is what makes this problem interesting from both an orbital-mechanics and optical-engineering perspective.
 
-If you would like to reproduce the calculations, experiment with different orbital altitudes, mirror sizes, target locations, and constellation sizes, the complete Python simulation is available on my **[Gumroad page](YOUR_GUMROAD_LINK)**.
+If you would like to reproduce the calculations, experiment with different orbital altitudes, mirror sizes, target locations, and constellation sizes, the complete Python simulation is available on my **[Gumroad page](https://opticalpython.gumroad.com/l/mirror_sso)**.
 
 In future articles, I plan to extend this model beyond a single point in Boston and investigate how the illumination changes across **different cities, different seasons, and potentially the entire nighttime side of Earth**.
