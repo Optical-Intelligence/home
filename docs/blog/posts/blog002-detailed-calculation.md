@@ -1,7 +1,7 @@
 ---
 date:
   created: 2026-08-22
-draft: True
+draft: False
 ---
 
 # How Does a Space Mirror Light Up the Night? The Physics Behind the Simulation
