@@ -476,7 +476,7 @@ This provides a direct geometric test for Earth occlusion.
 
 ---
 
-# 8. Sun-to-Mirror-to-Earth Reflection Geometry
+## 8. Sun-to-Mirror-to-Earth Reflection Geometry
 
 ![Sun-to-Mirror-to-Earth Reflection Geometry](images/blog002_figure2.png)
 
@@ -549,7 +549,7 @@ We now know the two directions required for the reflection:
 
 ---
 
-## 8.1 Required Mirror Normal
+### 8.1 Required Mirror Normal
 
 For an ideal flat mirror undergoing specular reflection, the surface normal bisects the angle between the incoming and outgoing directions.
 
@@ -600,7 +600,7 @@ The mirror therefore redirects the sunlight from the Sun toward the selected poi
 
 ---
 
-# 9. Mirror Area and Projected Area
+## 9. Mirror Area and Projected Area
 
 Suppose each mirror is a square with side length $L$.
 
@@ -674,7 +674,7 @@ and the effective collecting area decreases.
 
 ---
 
-# 10. Reflected Optical Power
+## 10. Reflected Optical Power
 
 Let the mirror reflectivity be $\rho$.
 
@@ -706,7 +706,7 @@ These effects can be incorporated later using more sophisticated models.
 
 ---
 
-# 11. The Finite Angular Size of the Sun
+## 11. The Finite Angular Size of the Sun
 
 The sun light coming to Earth is not perfeclty parrellel and has an angular divergence of approximately
 
@@ -805,7 +805,7 @@ This is one of the reasons that increasing orbital altitude does not necessarily
 
 ---
 
-# 12. Ground Incidence Angle
+## 12. Ground Incidence Angle
 
 The reflected light does not necessarily hit Earth's surface perpendicular to the ground.
 
@@ -859,7 +859,7 @@ Therefore, the same amount of reflected optical power can produce different grou
 
 ---
 
-# 13. Visible-Light Component
+## 13. Visible-Light Component
 
 ![Solar_spectrum](images/blog002_figure3.png)
 
@@ -896,7 +896,7 @@ A more rigorous model would integrate the solar spectral irradiance over a defin
 
 ---
 
-# 14. Atmospheric Attenuation
+## 14. Atmospheric Attenuation
 
 The reflected irradiance calculated above represents the illumination before accounting for atmospheric losses.
 
@@ -935,7 +935,7 @@ Therefore, the atmospheric factor used here should be regarded as a representati
 
 ---
 
-# 15. Final Ground-Irradiance Equation
+## 15. Final Ground-Irradiance Equation
 
 We can now combine the optical and geometric calculations.
 
@@ -1049,7 +1049,7 @@ This is the main irradiance equation used in the simplified model.
 
 ---
 
-# 16. What Each Term Means
+## 16. What Each Term Means
 
 The equation looks complicated, but every term has a straightforward physical meaning:
 
@@ -1116,7 +1116,7 @@ This means that increasing the distance between the mirror and the target can si
 
 ---
 
-# 17. Why Orbital Altitude Matters
+## 17. Why Orbital Altitude Matters
 
 Orbital altitude affects several parts of the calculation simultaneously.
 
@@ -1142,7 +1142,7 @@ It requires evaluating the complete optical and geometric model.
 
 ---
 
-# 18. Why Only Some Mirrors Contribute
+## 18. Why Only Some Mirrors Contribute
 
 This is one of the most important results of the simulation.
 
@@ -1215,7 +1215,7 @@ This is why simply calculating the irradiance from one mirror and multiplying it
 
 ---
 
-# 19. Comparing the Result with Full-Moon Illumination
+## 19. Comparing the Result with Full-Moon Illumination
 
 Once the total reflected irradiance has been calculated, it can be compared with a reference full-Moon irradiance.
 
@@ -1263,7 +1263,7 @@ we can say:
 
 ---
 
-# 20. Limitations of the Model
+## 20. Limitations of the Model
 
 The model described above is intentionally simplified.
 
@@ -1326,7 +1326,7 @@ A complete analysis should therefore examine different seasons rather than relyi
 
 ---
 
-# 21. What the Simulation Really Tells Us
+## 21. What the Simulation Really Tells Us
 
 The most important lesson from this calculation is that the problem is much more complicated than
 
@@ -1370,7 +1370,7 @@ This is also why changing the orbital altitude can produce surprisingly large ch
 
 ---
 
-# 22. Conclusion
+## 22. Conclusion
 
 The goal of this simulation was not simply to calculate how much sunlight an 18-meter mirror can reflect.
 
