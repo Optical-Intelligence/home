@@ -1,6 +1,6 @@
 ---
 date:
-  created: 2026-08-23
+  created: 2026-08-22
 draft: False
 ---
 
