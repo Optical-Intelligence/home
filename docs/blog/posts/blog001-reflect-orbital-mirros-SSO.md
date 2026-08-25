@@ -6,7 +6,7 @@ draft: false
 
 # How Many Space Mirrors Would It Take to Light Up Your Night?
 
-![Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance](images/blog001_figure1.PNG)
+![Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance](images/blog001_figure1.png)
 
 *Figure 1. Sun–Mirror–Earth configuration producing 0.01× full-Moon irradiance at Boston.*
 
@@ -42,11 +42,11 @@ A Sun-synchronous orbit is designed to maintain a nearly constant orientation wi
 
 In this simulation, I therefore use **dawn-dusk Sun-synchronous orbits** as the candidate orbits for the orbital mirrors. The next sections will explain in detail how the orbital geometry is determined and how I calculate whether a particular mirror can actually reflect sunlight to a specific point on Earth.
 
-![Sun–Mirror–Earth configuration producing 1× full-Moon irradiance](images/blog001_figure2.PNG)
+![Sun–Mirror–Earth configuration producing 1× full-Moon irradiance](images/blog001_figure2.png)
 
 *Figure 2. Sun–Mirror–Earth configuration producing 1× full-Moon irradiance at Boston.*
 
-![Sun–Mirror–Earth configuration producing 11× full-Moon irradiance](images/blog001_figure3.PNG)
+![Sun–Mirror–Earth configuration producing 11× full-Moon irradiance](images/blog001_figure3.png)
 
 *Figure 3. Sun–Mirror–Earth configuration producing 11× full-Moon irradiance at Boston.*
 

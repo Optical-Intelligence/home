@@ -56,7 +56,7 @@ But why is this orbit attractive?
 
 ### 3.1 What Is a Sun-Synchronous Orbit?
 
-![Dawn-dusk Sun-synchronous orbit](images/blog002_figure1.PNG)
+![Dawn-dusk Sun-synchronous orbit](images/blog002_figure1.png)
 *Figure 1 — Dawn-dusk Sun-synchronous orbit ([image credit](https://www.esa.int/ESA_Multimedia/Images/2018/07/The_SMOS_satellite_in_sun-synchronous_orbit))*
 
 A Sun-synchronous orbit is an orbit whose orbital plane precesses around Earth at approximately the same rate that Earth moves around the Sun. The orbital plane therefore maintains approximately the same orientation relative to the Sun.
@@ -478,7 +478,7 @@ This provides a direct geometric test for Earth occlusion.
 
 # 8. Sun-to-Mirror-to-Earth Reflection Geometry
 
-![Sun-to-Mirror-to-Earth Reflection Geometry](images/blog002_figure2.PNG)
+![Sun-to-Mirror-to-Earth Reflection Geometry](images/blog002_figure2.png)
 
 *Figure 2. Sun-to-Mirror-to-Earth Reflection Geometry.*
 
@@ -861,7 +861,7 @@ Therefore, the same amount of reflected optical power can produce different grou
 
 # 13. Visible-Light Component
 
-![Solar_spectrum](images/blog002_figure3.PNG)
+![Solar_spectrum](images/blog002_figure3.png)
 
 *Figure 3. Solar spectrum.*
 
