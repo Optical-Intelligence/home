@@ -18,6 +18,8 @@ I was immediately curious: **is this really possible, and how much light could a
 
 I started looking for more information about the technical parameters of the system, particularly the mirror size, orbital altitude, and orbital configuration. However, I could not find enough publicly available information to answer these questions in detail. The one specific number I found is that Reflect Orbital plans to use mirrors approximately 18 meters wide.
 
+<!-- more -->
+
 So I decided to take that number as a starting point and use my background in optics and physics, together with a Python-based simulation, to investigate the problem myself.
 
 In particular, I want to answer a simple but interesting question:

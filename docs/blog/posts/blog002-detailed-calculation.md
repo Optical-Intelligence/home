@@ -20,6 +20,8 @@ Here I will explain the physics and mathematics behind the simulation, starting 
 
 The complete Python simulation used to generate the results is available on my **[Gumroad page](https://opticalpython.gumroad.com/l/mirror_sso)**. I have decided to keep the code separate from this article so that you can experiment with the simulation yourself.
 
+<!-- more -->
+
 The calculation can be divided into several major steps:
 
 $$
