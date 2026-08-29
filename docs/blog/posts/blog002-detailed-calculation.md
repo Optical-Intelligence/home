@@ -1412,3 +1412,9 @@ That is what makes this problem interesting from both an orbital-mechanics and o
 If you would like to reproduce the calculations, experiment with different orbital altitudes, mirror sizes, target locations, and constellation sizes, the complete Python simulation is available on my **[Gumroad page](https://opticalpython.gumroad.com/l/mirror_sso)**.
 
 In future articles, I plan to extend this model beyond a single point in Boston and investigate how the illumination changes across **different cities, different seasons, and potentially the entire nighttime side of Earth**.
+
+---
+
+<small style="color: #777;">
+***Disclaimer:** Optical Intelligence is an independent personal hobby project. The articles, Python Code, simulations, models, calculations, and opinions published here are my own and are created independently of my employment and professional work; this website is not affiliated with, sponsored by, endorsed by, or operated on behalf of my employer, and nothing published here represents the views, opinions, policies, or technical positions of my employer. The content and Code are provided primarily for educational and experimental purposes, with no guarantee that the information, calculations, models, simulations, or results are accurate, complete, current, or suitable for any particular purpose; use them at your own discretion and independently verify important results.*
+</small> 

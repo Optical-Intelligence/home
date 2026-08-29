@@ -67,3 +67,9 @@ This result illustrates an important point: **the total number of mirrors in the
 In the next post, I will provide the **Python simulation code and the detailed equations** used to calculate the Sun–mirror–Earth geometry and the resulting ground irradiance.
 
 **Stay tuned!**
+
+---
+
+<small style="color: #777;">
+***Disclaimer:** Optical Intelligence is an independent personal hobby project. The articles, Python Code, simulations, models, calculations, and opinions published here are my own and are created independently of my employment and professional work; this website is not affiliated with, sponsored by, endorsed by, or operated on behalf of my employer, and nothing published here represents the views, opinions, policies, or technical positions of my employer. The content and Code are provided primarily for educational and experimental purposes, with no guarantee that the information, calculations, models, simulations, or results are accurate, complete, current, or suitable for any particular purpose; use them at your own discretion and independently verify important results.*
+</small> 
