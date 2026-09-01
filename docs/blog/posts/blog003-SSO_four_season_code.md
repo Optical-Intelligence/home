@@ -17,6 +17,8 @@ The complete Python code is available on my Gumroad page:
 
 **👉 [Mirror SSO Python Simulation — Gumroad](https://opticalpython.gumroad.com/l/mirror_sso)**
 
+<!-- more -->
+
 ---
 
 ## The Simulation Setup
@@ -43,8 +45,6 @@ The simulation was run for four dates in 2025:
 | Winter | 2025-12-20      |  **0.47 full moons** |
 
 These results illustrate an important point: **the illumination produced by the same mirror constellation can vary significantly with the season and the Sun's position.**
-
-<!-- more -->
 
 ---
 
