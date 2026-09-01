@@ -9,6 +9,9 @@ DISCLAIMER = """
 """.strip()
 
 
-def on_page_markdown(markdown, **kwargs):
+def on_page_markdown(markdown, page, **kwargs):
     """Append the disclaimer after each page's authored content."""
+    if page.file.src_path == "blog/index.md":
+        return markdown
+
     return f"{markdown.rstrip()}\n\n{DISCLAIMER}\n"
