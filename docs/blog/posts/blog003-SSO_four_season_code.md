@@ -1,4 +1,8 @@
 ---
+layout: post
+title: "Simulating a Space-Mirror System with Python: Four Seasons Over Boston"
+categories: [Space, Optics, Python]
+series: "Space Mirror Simulation"
 date:
   created: 2026-08-30
 draft: False
@@ -8,8 +12,8 @@ draft: False
 
 In my previous two posts, I introduced the idea of using a constellation of space mirrors to reflect sunlight toward Earth and explained the basic physics behind the simulation.
 
-* [Blog 1: How Many Space Mirrors Would It Take to Light Up Your Night?](https://optical-intelligence.github.io/home/blog/2026/08/16/how-many-space-mirrors-would-it-take-to-light-up-your-night)
-* [Blog 2: How Does a Space Mirror Light Up the Night? The Physics Behind the Simulation](https://optical-intelligence.github.io/home/blog/2026/08/22/how-does-a-space-mirror-light-up-the-night-the-physics-behind-the-simulation)
+* [How Many Space Mirrors Would It Take to Light Up Your Night?](https://optical-intelligence.github.io/home/blog/2026/08/16/how-many-space-mirrors-would-it-take-to-light-up-your-night)
+* [How Does a Space Mirror Light Up the Night? The Physics Behind the Simulation](https://optical-intelligence.github.io/home/blog/2026/08/22/how-does-a-space-mirror-light-up-the-night-the-physics-behind-the-simulation)
 
 In this third post, I want to show the **Python simulation code itself** and demonstrate how it can be used to calculate reflected sunlight at Boston during different seasons.
 

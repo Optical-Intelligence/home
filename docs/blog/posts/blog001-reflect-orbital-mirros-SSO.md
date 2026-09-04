@@ -1,4 +1,8 @@
 ---
+layout: post
+title: "How Many Space Mirrors Would It Take to Light Up Your Night?"
+categories: [Space, Optics, Python]
+series: "Space Mirror Simulation"
 date:
   created: 2026-08-16
 draft: false
