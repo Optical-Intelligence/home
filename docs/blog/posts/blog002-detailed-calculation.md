@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "How Does a Space Mirror Light Up the Night? The Physics Behind the Simulation?"
-categories: [Space, Optics, Python]
-series: "Space Mirror Simulation"
+categories: [Space Mirrors, Optics, Python]
 date:
   created: 2026-08-22
 draft: False
