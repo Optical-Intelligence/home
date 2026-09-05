@@ -2,7 +2,9 @@
 date:
   created: 2026-08-30
 draft: False
-categories: [Space Mirrors, Optics, Python]
+categories:
+  - Space Mirrors
+  - Python
 ---
 
 # Simulating a Space-Mirror System with Python: Four Seasons Over Boston

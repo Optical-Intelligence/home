@@ -2,7 +2,9 @@
 date:
   created: 2026-09-05
 draft: False
-categories: [Space Mirrors, Optics, Python]
+categories:
+  - Space Mirrors
+  - Python
 ---
 
 # Can 25,000 Space Mirrors Really Light Up the Night?
