@@ -1,4 +1,7 @@
-"""Add the site's shared disclaimer to every Markdown page."""
+"""Add shared post controls and the site's disclaimer during the build."""
+
+from html import escape
+from urllib.parse import quote, urljoin
 
 DISCLAIMER = """
 ---
@@ -9,9 +12,30 @@ DISCLAIMER = """
 """.strip()
 
 
-def on_page_markdown(markdown, page, **kwargs):
-    """Append the disclaimer after each page's authored content."""
+def share_buttons(page, config):
+    """Return share controls for an individual blog post."""
+    post_url = urljoin(config["site_url"], page.url)
+    encoded_url = quote(post_url, safe="")
+    encoded_title = quote(page.title or "", safe="")
+    safe_url = escape(post_url, quote=True)
+
+    return f"""
+<div class="share-buttons" aria-label="Share this article">
+  <span class="share-buttons__label">Share this article:</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={encoded_url}" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://x.com/intent/tweet?url={encoded_url}&amp;text={encoded_title}" target="_blank" rel="noopener noreferrer">X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url={encoded_url}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button type="button" class="share-buttons__copy" data-share-url="{safe_url}">Copy link</button>
+</div>
+""".strip()
+
+
+def on_page_markdown(markdown, page, config, **kwargs):
+    """Add sharing controls to posts and append the disclaimer elsewhere."""
     if page.file.src_path == "blog/index.md":
         return markdown
+
+    if page.file.src_path.startswith("blog/posts/"):
+        return f"{share_buttons(page, config)}\n\n{markdown.rstrip()}\n\n{DISCLAIMER}\n"
 
     return f"{markdown.rstrip()}\n\n{DISCLAIMER}\n"

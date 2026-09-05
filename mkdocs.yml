@@ -1,4 +1,5 @@
 site_name: Optical Intelligence
+site_url: https://optical-intelligence.github.io/home/
 
 theme:
   name: material
@@ -13,6 +14,10 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/share.js
+
+extra_css:
+  - stylesheets/share.css
 
 # Adds the shared disclaimer to every Markdown page during the site build.
 # Edit hooks/disclaimer.py to update it site-wide.
