@@ -1,6 +1,7 @@
 """Add shared post controls and the site's disclaimer during the build."""
 
 from html import escape
+import re
 from urllib.parse import quote, urljoin
 
 DISCLAIMER = """
@@ -12,11 +13,11 @@ DISCLAIMER = """
 """.strip()
 
 
-def share_buttons(page, config):
+def share_buttons(page, config, title):
     """Return share controls for an individual blog post."""
     post_url = urljoin(config["site_url"], page.url)
     encoded_url = quote(post_url, safe="")
-    encoded_title = quote(page.title or "", safe="")
+    encoded_title = quote(title, safe="")
     safe_url = escape(post_url, quote=True)
 
     return f"""
@@ -30,12 +31,25 @@ def share_buttons(page, config):
 """.strip()
 
 
+def add_share_buttons(markdown, page, config):
+    """Place sharing controls below the post title, preserving title detection."""
+    title_match = re.search(r"^#\s+(.+?)\s*$", markdown, re.MULTILINE)
+
+    if not title_match:
+        return f"{share_buttons(page, config, page.title or '')}\n\n{markdown}"
+
+    title = title_match.group(1)
+    buttons = share_buttons(page, config, title)
+    return f"{markdown[:title_match.end()]}\n\n{buttons}{markdown[title_match.end():]}"
+
+
 def on_page_markdown(markdown, page, config, **kwargs):
     """Add sharing controls to posts and append the disclaimer elsewhere."""
     if page.file.src_path == "blog/index.md":
         return markdown
 
     if page.file.src_path.startswith("blog/posts/"):
-        return f"{share_buttons(page, config)}\n\n{markdown.rstrip()}\n\n{DISCLAIMER}\n"
+        markdown = add_share_buttons(markdown.rstrip(), page, config)
+        return f"{markdown}\n\n{DISCLAIMER}\n"
 
     return f"{markdown.rstrip()}\n\n{DISCLAIMER}\n"
