@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "Can 25,000 Space Mirrors Really Light Up the Night?"
-categories: [Space Mirrors, Optics, Python]
 date:
   created: 2026-09-05
-draft: True
+draft: False
+categories: [Space Mirrors, Optics, Python]
 ---
 
 # Can 25,000 Space Mirrors Really Light Up the Night?
@@ -245,8 +243,137 @@ Other assumptions or system designs may produce different results.
 
 If you are interested in experimenting with the model yourself, the Python code is available here:
 
-### 👉 [Get the Space Mirror Simulation Code](https://opticalpython.gumroad.com/l/mirror_sso)
+### 👉 [Get the Space Mirror Simulation Code](https://opticalpython.gumroad.com/l/multi_orbit)
 
+Here is an example of the the main code, which needs the MirrorSSO_Class [here](https://opticalpython.gumroad.com/l/multi_orbit) to run: 
+
+```python
+# ============================================================
+# Sunlight Reflection from Mirrors in Multiple Dawn-Dusk SSOs
+# ============================================================
+
+import math
+import numpy as np
+from skyfield.api import load
+
+from MirrorSSO_Class import MirrorSSO
+
+
+# ======================== CONFIGURATION ========================
+
+# Boston, MA
+LAT_DEG = 42
+LON_DEG = -71
+
+# Spring equinox 2025-03-20, 04:00 UTC (US Eastern Time 00:00)
+SIMULATION_TIME = (2025, 3, 20, 4, 0, 0)
+
+# Simulate one dawn-dusk SSO at each altitude in this range.
+ORBIT_ALTITUDE_KM_ARR = np.arange(1500.0, 5301.0, 100.0)
+EARTH_RADIUS_KM = 6371.0
+MIRROR_SPACE_KM = 100.0
+FULL_MOON_IRRADIANCE_MW_M2 = 1.0  # mW/m^2
+
+def main():
+    """Run the reflection calculation for every configured orbit altitude."""
+    print("Loading Skyfield DE440...")
+    ts = load.timescale()
+    eph = load("de440s.bsp")
+
+    earth = eph["earth"]
+    sun = eph["sun"]
+    t = ts.utc(*SIMULATION_TIME)
+
+    print(f"\nTime: {t.utc_strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    sun_apparent = earth.at(t).observe(sun).apparent()
+    sun_position = sun_apparent.xyz.km
+    sun_ra, sun_dec, sun_distance = sun_apparent.radec()
+
+    print("\nSun Parameters:")
+    print(f"  RA       = {sun_ra}")
+    print(f"  Dec      = {sun_dec}")
+    print(f"  Distance = {sun_distance.au:.8f} AU")
+    print("\nPer-orbit results:")
+
+    total_mirrors = 0
+    total_illuminating_mirrors = 0
+    total_irradiance = 0.0
+    orbit_results = []
+    plot_simulation = None
+
+    for altitude_km in ORBIT_ALTITUDE_KM_ARR:
+        n_mirrors = round(
+            2.0 * math.pi * (EARTH_RADIUS_KM + altitude_km) / MIRROR_SPACE_KM
+        )
+        simulation = MirrorSSO(
+            n_mirrors=n_mirrors,
+            orbit_altitude_km=altitude_km,
+            mirror_side_m=18.0,
+            mirror_reflectivity=0.90,
+            solar_irradiance_1au=1361.0,
+            sun_angular_diameter_rad=9.3e-3,
+            visible_fraction=0.46,
+            atmospheric_transmission=0.80,
+            ltan_hours=6.0,
+        )
+
+        inclination_deg = simulation.sso_inclination_deg(altitude_km)
+        raan_rad = simulation.dawn_dusk_raan(sun_position)
+        mirrors = simulation.generate_mirrors(
+            simulation.N_MIRRORS, altitude_km, inclination_deg, raan_rad
+        )
+        irradiance, illuminating_mirrors, non_illuminating_mirrors = (
+            simulation.calculate_irradiance_at_point(
+                t, LAT_DEG, LON_DEG, mirrors, sun_position
+            )
+        )
+
+        illuminating_count = len(illuminating_mirrors)
+        illuminating_percent = 100.0 * illuminating_count / simulation.N_MIRRORS
+        print(
+            f"  {altitude_km:6.0f} km | "
+            f"mirrors: {simulation.N_MIRRORS:4d} | "
+            f"illuminating: {illuminating_count:3d} "
+            f"({illuminating_percent:5.1f}%) | "
+            f"irradiance: {irradiance * 1000:.5f} mW/m^2"
+        )
+
+        total_mirrors += simulation.N_MIRRORS
+        total_illuminating_mirrors += illuminating_count
+        total_irradiance += irradiance
+        orbit_results.append({
+            "altitude_km": altitude_km,
+            "irradiance_w_m2": irradiance,
+            "mirrors": mirrors,
+            "illuminating_mirrors": illuminating_mirrors,
+            "non_illuminating_mirrors": non_illuminating_mirrors,
+            "time": t,
+        })
+        plot_simulation = simulation
+
+    total_illuminating_percent = 100.0 * total_illuminating_mirrors / total_mirrors
+    print("\nFinal Irradiance Results:")
+    print(f"  Number of Orbits           = {len(orbit_results)}")
+    print(f"  Total Mirrors in Orbits    = {total_mirrors}")
+    print(
+        f"  Illuminating Mirrors       = {total_illuminating_mirrors} "
+        f"({total_illuminating_percent:.1f}%)"
+    )
+    print(f"  Total Ground Irradiance    = {total_irradiance * 1000:.5f} mW/m^2")
+    print(
+        f"  Fraction of Full Moon  = "
+        f"{total_irradiance * 1000 / FULL_MOON_IRRADIANCE_MW_M2:.4f}"
+    )
+    print("=" * 65)
+
+    simulation.plot_multi_orbit_results(plot_simulation, orbit_results, LAT_DEG, LON_DEG)
+    simulation.plot_altitude_results(orbit_results)
+
+
+if __name__ == "__main__":
+    main()
+
+```
 ---
 
 ## 8. Final Thoughts

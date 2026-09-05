@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "How Many Space Mirrors Would It Take to Light Up Your Night?"
-categories: [Space Mirrors, Optics, Python]
 date:
   created: 2026-08-16
 draft: false
+categories: [Space Mirrors, Optics, Python]
 ---
 
 # How Many Space Mirrors Would It Take to Light Up Your Night?
